@@ -3,7 +3,7 @@
 </div>
 </div>
 <?php if ($this->session->userdata('logged_in')) { ?>
-<footer>Powered by CODE IGNITER. / Developer <a href="#">Andreas Ardi, Wibi Chamim, Aprilita</a></footer>
+<footer>Powered by CODE IGNITER. / Developed by : <a href="#">Andreas Ardi, Wibi Chamim, Aprilita</a></footer>
 <?php } ?>
 </div>
 <!-- Modal Calculator -->
