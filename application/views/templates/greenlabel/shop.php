@@ -148,7 +148,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <img src="<?= base_url('attachments/shop_images/' . $product['image']) ?>" alt="" class="img-responsive">
                         </a>
                         <h3><?= $product['title'] ?></h3>
-                        <span class="price"><?= $product['price'] . CURRENCY ?></span>
+                        <span class="price"><?='Rp. '. $product['price']?></span>
                         <a class="add-to-cart" data-goto="<?= LANG_URL . '/checkout' ?>" href="javascript:void(0);" data-id="<?= $product['id'] ?>">
                             <?= lang('add_to_cart') ?>
                         </a>

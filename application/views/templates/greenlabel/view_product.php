@@ -45,13 +45,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <h1><?= $product['title'] ?></h1>
                 <div class="row row-info">
                     <div class="col-sm-6"><b><?= lang('price') ?>:</b></div>
-                    <div class="col-sm-6"><?= $product['price'] . CURRENCY ?></div>
+                    <div class="col-sm-6"><?= 'Rp. '. $product['price']  ?></div>
                     <div class="col-sm-12 border-bottom"></div>
                 </div>
                 <?php if ($product['old_price'] != '') { ?>
                     <div class="row row-info">
                         <div class="col-sm-6"><b><?= lang('old_price') ?>:</b></div>
-                        <div class="col-sm-6"><?= $product['old_price'] . CURRENCY ?></div>
+                        <div class="col-sm-6"><?= 'Rp. '. $product['old_price']  ?></div>
                         <div class="col-sm-12 border-bottom"></div>
                     </div>
                 <?php } if ($publicQuantity == 1) { ?>
@@ -59,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="col-sm-6">
                             <b><?= lang('in_stock') ?>:</b>
                         </div>
-                        <div class="col-sm-6"><?= $product['quantity'] ?></div>
+                        <div class="col-sm-6"><?= 'Rp. '. $product['quantity'] ?></div>
                         <div class="col-sm-12 border-bottom"></div>
                     </div>
                 <?php } ?>
@@ -130,7 +130,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <img src="<?= base_url('attachments/shop_images/' . $prod['image']) ?>" alt="" class="img-responsive">
                     </a>
                     <h3><?= $prod['title'] ?></h3>
-                    <span class="price"><?= $prod['price'] . CURRENCY ?></span>
+                    <span class="price"><?= 'Rp. '. $prod['price']  ?></span>
                     <a class="add-to-cart" data-goto="<?= LANG_URL . '/checkout' ?>" href="javascript:void(0);" data-id="<?= $prod['id'] ?>">
                         <?= lang('add_to_cart') ?>
                     </a>

@@ -75,7 +75,7 @@ if (count($sliderProducts) > 0) {
                                     <a href="<?= LANG_URL . '/' . $product['url'] ?>">
                                         <img src="<?= base_url('attachments/shop_images/' . $product['image']) ?>" class="img-responsive">
                                         <h1><?= $product['title'] ?></h1>
-                                        <span class="price"><?= $product['price'] ?> &#8377;</span>
+                                        <span class="price"><?= 'Rp. '. $product['price'] ?></span>
                                     </a>
                                     <a class="add-to-cart"  href="<?= LANG_URL . '/' . $product['url'] ?>">
                                         <?= lang('add_to_cart') ?>

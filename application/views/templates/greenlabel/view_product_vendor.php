@@ -39,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <h1><?= $product['title'] ?></h1>
             <div class="row row-info">
                 <div class="col-sm-6"><b><?= lang('price') ?>:</b></div>
-                <div class="col-sm-6"><?= $product['price'] . CURRENCY ?></div>
+                <div class="col-sm-6"><?= 'Rp. '. $product['price']  ?></div>
                 <div class="col-sm-12 border-bottom"></div>
             </div>
             <div class="row row-info">
@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <?php if ($product['old_price'] != '') { ?>
                 <div class="row row-info">
                     <div class="col-sm-6"><b><?= lang('old_price') ?>:</b></div>
-                    <div class="col-sm-6"><?= $product['old_price'] . CURRENCY ?></div>
+                    <div class="col-sm-6"><?='Rp. '. $product['old_price']  ?></div>
                     <div class="col-sm-12 border-bottom"></div>
                 </div>
             <?php } if ($publicQuantity == 1) { ?>

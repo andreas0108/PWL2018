@@ -14,10 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <form method="POST" id="goOrder">
             <div class="row">
                 <div class="col-sm-6 left-side">
-                    <h4><?= lang('billing_details') ?></h4>
-                    <div class="title alone">
-                        <span><?= lang('checkout') ?></span>
-                    </div>
+                    <h4>Detail Transaksi</h4>
                     <?php
                     if ($this->session->flashdata('submit_error')) {
                         ?>
@@ -44,67 +41,68 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <option value="Bank"><?= lang('bank_payment') ?> </option>
                             <?php } ?>
                         </select>
-                        <span class="top-header text-center"><?= lang('choose_payment') ?></span>
+                        <span class="top-header text-center">Pilih Pembayaran</span>
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-6">
-                            <label for="firstNameInput"><?= lang('first_name') ?> (<sup><?= lang('requires') ?></sup>)</label>
+                            <label for="firstNameInput">Nama Depan *</label>
                             <input id="firstNameInput" class="form-control" name="first_name" value="<?= @$_POST['first_name'] ?>" type="text" placeholder="<?= lang('first_name') ?>">
                         </div>
                         <div class="form-group col-sm-6">
-                            <label for="lastNameInput"><?= lang('last_name') ?> (<sup><?= lang('requires') ?></sup>)</label>
+                            <label for="lastNameInput">Nama Belakang *</label>
                             <input id="lastNameInput" class="form-control" name="last_name" value="<?= @$_POST['last_name'] ?>" type="text" placeholder="<?= lang('last_name') ?>">
                         </div>
                         <div class="form-group col-sm-6">
-                            <label for="emailAddressInput"><?= lang('email_address') ?> (<sup><?= lang('requires') ?></sup>)</label>
+                            <label for="emailAddressInput">Alamat Email *</label>
                             <input id="emailAddressInput" class="form-control" name="email" value="<?= @$_POST['email'] ?>" type="text" placeholder="<?= lang('email_address') ?>">
                         </div>
                         <div class="form-group col-sm-6">
-                            <label for="phoneInput"><?= lang('phone') ?> (<sup><?= lang('requires') ?></sup>)</label>
+                            <label for="phoneInput">No. HP *</label>
                             <input id="phoneInput" class="form-control" name="phone" value="<?= @$_POST['phone'] ?>" type="text" placeholder="<?= lang('phone') ?>">
                         </div>
                         <div class="form-group col-sm-12">
-                            <label for="addressInput"><?= lang('address') ?> (<sup><?= lang('requires') ?></sup>)</label>
+                            <label for="addressInput">Alamat *</label>
                             <textarea id="addressInput" name="address" class="form-control" rows="3"><?= @$_POST['address'] ?></textarea>
                         </div>
                         <div class="form-group col-sm-6">
-                            <label for="cityInput"><?= lang('city') ?> (<sup><?= lang('requires') ?></sup>)</label>
+                            <label for="cityInput">Kota *</label>
                             <input id="cityInput" class="form-control" name="city" value="<?= @$_POST['city'] ?>" type="text" placeholder="<?= lang('city') ?>">
                         </div>
                         <div class="form-group col-sm-6">
-                            <label for="postInput"><?= lang('post_code') ?></label>
+                            <label for="postInput">Kode Pos</label>
                             <input id="postInput" class="form-control" name="post_code" value="<?= @$_POST['post_code'] ?>" type="text" placeholder="<?= lang('post_code') ?>">
                         </div>
                         <div class="form-group col-sm-12">
-                            <label for="notesInput"><?= lang('notes') ?></label>
+                            <label for="notesInput">Notes</label>
                             <textarea id="notesInput" class="form-control" name="notes" rows="3"><?= @$_POST['notes'] ?></textarea>
                         </div>
                     </div>
                     <?php if ($codeDiscounts == 1) { ?>
                         <div class="discount">
-                            <label><?= lang('discount_code') ?></label>
+                            <label>Kode Diskon / Promo</label>
                             <input class="form-control" name="discountCode" value="<?= @$_POST['discountCode'] ?>" placeholder="<?= lang('enter_discount_code') ?>" type="text">
                             <a href="javascript:void(0);" class="btn btn-default" onclick="checkDiscountCode()"><?= lang('check_code') ?></a>
                         </div>
                     <?php } ?>
+                    <label><center>* : Wajib Diisi</center></label>
                     <div>
                         <a href="javascript:void(0);" class="btn go-order" onclick="document.getElementById('goOrder').submit();" class="pull-left">
-                            <?= lang('custom_order') ?> 
+                            PROSES
                         </a>
                         <div class="clearfix"></div>
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <h4><?= lang('your_order') ?></h4>
+                    <h4>Transaksi Anda</h4>
                     <div class="table-responsive">
                         <table class="table table-bordered table-products">
                             <thead>
                                 <tr>
-                                    <th><?= lang('product') ?></th>
-                                    <th><?= lang('title') ?></th>
-                                    <th><?= lang('quantity') ?></th>
-                                    <th><?= lang('price') ?></th>
-                                    <th><?= lang('total') ?></th>
+                                    <th>Produk</th>
+                                    <th>Nama</th>
+                                    <th>Jumlah</th>
+                                    <th>Harga</th>
+                                    <th>Total</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -130,16 +128,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <span class="glyphicon glyphicon-minus"></span>
                                             </a>
                                         </td>
-                                        <td><?= $item['price'] . CURRENCY ?></td>
-                                        <td><?= $item['sum_price'] . CURRENCY ?></td>
+                                        <td><?='Rp. '. $item['price'] ?></td>
+                                        <td><?='Rp. '. $item['sum_price'] ?></td>
                                     </tr>
                                 <?php } ?>
                                 <tr>
-                                    <td colspan="4" class="text-right"><?= lang('total') ?></td>
+                                    <td colspan="4" class="text-right">Total</td>
                                     <td>
-                                        <span class="final-amount"><?= $cartItems['finalSum'] ?></span><?= CURRENCY ?>
+                                        <span class="final-amount"><?='Rp. '. $cartItems['finalSum'] ?></span>
                                         <input type="hidden" class="final-amount" name="final_amount" value="<?= $cartItems['finalSum'] ?>">
-                                        <input type="hidden" name="amount_currency" value="<?= CURRENCY ?>">
+                                        <input type="hidden" name="amount_currency" value="">
                                         <input type="hidden" name="discountAmount" value="">
                                     </td>
                                 </tr>

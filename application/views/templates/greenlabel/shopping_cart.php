@@ -48,13 +48,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <span class="glyphicon glyphicon-minus"></span>
                                 </a>
                             </td>
-                            <td><?= $item['price'] . CURRENCY ?></td>
-                            <td><?= $item['sum_price'] . CURRENCY ?></td>
+                            <td><?= 'Rp. '. $item['price']  ?></td>
+                            <td><?= 'Rp. '.$item['sum_price']  ?></td>
                         </tr>
                     <?php } ?>
                     <tr>
                         <td colspan="4" class="text-right"><?= lang('total') ?></td>
-                        <td><?= $cartItems['finalSum'] . CURRENCY ?></td>
+                        <td><?= 'Rp. '.$cartItems['finalSum']  ?></td>
                     </tr>
                 </tbody>
             </table>
