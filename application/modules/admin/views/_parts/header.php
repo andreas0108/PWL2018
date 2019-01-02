@@ -59,7 +59,6 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href="javascript:void(0);" data-toggle="modal" data-target="#modalCalculator"><i class="fa fa-calculator" aria-hidden="true"></i> Calculator</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="<?= base_url('admin/logout') ?>"><i class="fa fa-sign-out"></i> Logout</a></li>
